@@ -1,15 +1,35 @@
 import Link from "next/link";
+import ThemeToggle from "@/components/ThemeToggle";
+
+const navLinks = [
+  { href: "/about", label: "About" },
+  { href: "/experience", label: "Experience" },
+  { href: "/skills", label: "Skills" },
+  { href: "/projects", label: "Projects" },
+  { href: "/blog", label: "Blog" },
+  { href: "/cv", label: "CV" },
+];
 
 export default function Header() {
   return (
     <header className="mx-auto max-w-3xl px-6 py-6 flex justify-between items-center">
-      <Link href="/" className="font-semibold text-lg">
+      <Link href="/" className="font-semibold text-lg text-neutral-900 dark:text-white">
         Muhammad Salman
       </Link>
-      <nav className="flex gap-6 text-sm text-neutral-600">
-        <Link href="/#projects">Projects</Link>
-        <Link href="/#experience">Experience</Link>
-        <a href="mailto:you@example.com">Contact</a>
+      <nav className="hidden md:flex gap-5 items-center text-sm text-neutral-600 dark:text-neutral-400">
+        {navLinks.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="hover:text-neutral-900 dark:hover:text-white transition-colors"
+          >
+            {link.label}
+          </Link>
+        ))}
+        <kbd className="hidden lg:inline-block text-xs px-2 py-1 rounded border border-neutral-200 dark:border-neutral-800 text-neutral-400">
+          ⌘K
+        </kbd>
+        <ThemeToggle />
       </nav>
     </header>
   );

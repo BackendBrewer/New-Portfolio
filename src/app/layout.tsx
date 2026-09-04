@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import CommandPalette from "@/components/CommandPalette";
+import ScrollProgress from "@/components/ScrollProgress";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -10,14 +13,8 @@ export const metadata: Metadata = {
     template: "%s | Muhammad Salman",
   },
   description: "Laravel developer building fast, modern web applications.",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    siteName: "Muhammad Salman",
-  },
-  twitter: {
-    card: "summary_large_image",
-  },
+  openGraph: { type: "website", locale: "en_US", siteName: "Muhammad Salman" },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({
@@ -26,8 +23,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider>
+          <ScrollProgress />
+          {children}
+          <CommandPalette />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

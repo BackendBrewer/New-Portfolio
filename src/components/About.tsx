@@ -11,7 +11,7 @@ export default function About() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.5 }}
-        className="text-2xl font-semibold mb-4"
+        className="text-2xl font-semibold mb-4 text-neutral-900 dark:text-white"
       >
         About
       </motion.h2>
@@ -21,7 +21,7 @@ export default function About() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="text-neutral-400 leading-relaxed"
+        className="text-neutral-600 dark:text-neutral-400 leading-relaxed"
       >
         I'm a Laravel developer currently working at TRZ Technologies, where
         I build and maintain features for Palsome, a live social media
@@ -38,7 +38,7 @@ export default function About() {
       >
         {skills.map((group) => (
           <div key={group.category}>
-            <h3 className="text-sm font-semibold text-neutral-300 mb-2">
+            <h3 className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-2">
               {group.category}
             </h3>
             <ul className="space-y-1">
