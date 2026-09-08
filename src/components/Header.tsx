@@ -1,7 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const navLinks = [
+  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/experience", label: "Experience" },
   { href: "/skills", label: "Skills" },
@@ -11,17 +15,26 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
+
+  // current page ka link nav se hide karo
+  const filteredLinks = navLinks.filter((link) => link.href !== pathname);
+
   return (
     <header className="mx-auto max-w-3xl px-6 py-6 flex justify-between items-center">
-      <Link href="/" className="font-semibold text-lg text-neutral-900 dark:text-white">
+      <Link
+        href="/"
+        className="font-semibold text-lg text-neutral-900 dark:text-white"
+      >
         Muhammad Salman
       </Link>
-      <nav className="hidden md:flex gap-5 items-center text-sm text-neutral-600 dark:text-neutral-400">
-        {navLinks.map((link) => (
+
+      <nav className="hidden md:flex gap-5 items-center text-sm">
+        {filteredLinks.map((link) => (
           <Link
             key={link.href}
             href={link.href}
-            className="hover:text-neutral-900 dark:hover:text-white transition-colors"
+            className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
           >
             {link.label}
           </Link>
