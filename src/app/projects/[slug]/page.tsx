@@ -4,6 +4,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { projects } from "@/data/projects";
+import ProjectGallery from "@/components/ProjectGallery";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -170,22 +171,7 @@ export default async function ProjectPage({ params }: Props) {
             <h2 className="text-xl font-semibold text-neutral-900 dark:text-white mb-5">
               Gallery
             </h2>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {project.gallery.map((img, i) => (
-                <div
-                  key={i}
-                  className="relative w-full h-48 rounded-lg overflow-hidden border border-neutral-200 dark:border-neutral-800"
-                >
-                  <Image
-                    src={img}
-                    alt={`${project.title} screenshot ${i + 1}`}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+            <ProjectGallery images={project.gallery} title={project.title} />
           </section>
         )}
       </main>

@@ -26,6 +26,7 @@ export default function AboutContent() {
             src="/images/profile.png"
             alt="Muhammad Salman"
             fill
+            sizes="192px"
             className="object-cover"
           />
         </div>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
+import MobileMenu from "@/components/MobileMenu";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -16,8 +17,6 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
-
-  // current page ka link nav se hide karo
   const filteredLinks = navLinks.filter((link) => link.href !== pathname);
 
   return (
@@ -44,6 +43,11 @@ export default function Header() {
         </kbd>
         <ThemeToggle />
       </nav>
+
+      <div className="flex md:hidden items-center gap-4">
+        <ThemeToggle />
+        <MobileMenu />
+      </div>
     </header>
   );
 }
