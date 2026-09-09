@@ -25,7 +25,7 @@ export async function generateMetadata({
   if (!project) return {};
 
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://new-portfolio-phi-drab.vercel.app";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://mszdev.vercel.app";
   const absoluteImageUrl = `${siteUrl}${project.image}`;
 
   return {

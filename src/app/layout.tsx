@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://new-portfolio-phi-drab.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://mszdev.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -40,7 +40,7 @@ const personJsonLd = {
   "@type": "Person",
   name: "Muhammad Salman",
   jobTitle: "Laravel Developer",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://new-portfolio-phi-drab.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://mszdev.vercel.app",
   sameAs: [
     "https://github.com/backendbrewer",
     "https://www.linkedin.com/in/m-salman-zubair-140073263",
