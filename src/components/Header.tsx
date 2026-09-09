@@ -27,7 +27,7 @@ export default function Header() {
         href="/"
         className="font-semibold text-lg text-neutral-900 dark:text-white"
       >
-        Muhammad Salman
+        Muhammad Salman Zubair
       </Link>
 
       <nav className="hidden md:flex gap-5 items-center text-sm">

@@ -10,6 +10,9 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://mszdev.vercel.app";
 
 export const metadata: Metadata = {
+  verification: {
+    google: "zyWhg76C7fn7ogARr6dmPWtDLBK3vdlZgxX1s7BUflg",
+  },
   metadataBase: new URL(siteUrl),
   title: {
     default: "Muhammad Salman — Laravel Developer",
