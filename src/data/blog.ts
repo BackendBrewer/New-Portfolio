@@ -9,7 +9,7 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "learning-laravel-on-the-job",
+    slug: "learning-laravel",
     title: "What I've Learned Building Real Features in Laravel",
     excerpt:
       "A few lessons from working on a live production app as an intern — things courses don't teach you.",
