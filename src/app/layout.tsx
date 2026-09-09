@@ -43,7 +43,7 @@ const personJsonLd = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://mszdev.vercel.app",
   sameAs: [
     "https://github.com/backendbrewer",
-    "https://www.linkedin.com/in/m-salman-zubair-140073263",
+    "https://www.linkedin.com/in/muhammad-salman-zubair-140073263",
   ],
   worksFor: {
     "@type": "Organization",

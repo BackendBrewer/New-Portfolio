@@ -6,7 +6,7 @@ export default function Footer() {
         <a href="https://github.com/backendbrewer" target="_blank" className="hover:text-neutral-900 dark:hover:text-white transition-colors">
           GitHub
         </a>
-        <a href="https://www.linkedin.com/in/m-salman-zubair-140073263" target="_blank" className="hover:text-neutral-900 dark:hover:text-white transition-colors">
+        <a href="https://www.linkedin.com/in/muhammad-salman-zubair-140073263" target="_blank" className="hover:text-neutral-900 dark:hover:text-white transition-colors">
           LinkedIn
         </a>
       </div>

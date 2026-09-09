@@ -23,7 +23,7 @@ import { useCommandPalette } from "@/lib/command-palette-store";
 const CONTACT_EMAIL = "muhammadsalmanzubair5@gmail.com";
 const CONTACT_PHONE = "+92 310 4471034";
 const GITHUB_URL = "https://github.com/backendbrewer";
-const LINKEDIN_URL = "https://www.linkedin.com/in/m-salman-zubair-140073263";
+const LINKEDIN_URL = "https://www.linkedin.com/in/muhammad-salman-zubair-140073263";
 
 const navItems = [
   { href: "/", label: "Home", icon: Home, badge: "PAGE" },
