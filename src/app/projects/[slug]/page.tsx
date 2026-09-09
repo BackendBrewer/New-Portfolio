@@ -15,10 +15,18 @@ export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
+
+  const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://new-portfolio-phi-drab.vercel.app";
+  const absoluteImageUrl = `${siteUrl}${project.image}`;
 
   return {
     title: project.title,
@@ -26,8 +34,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: project.title,
       description: project.description,
-      images: [project.image],
+      images: [{ url: absoluteImageUrl, width: 1200, height: 630, alt: project.title }],
     },
+    twitter: { card: "summary_large_image", images: [absoluteImageUrl] },
   };
 }
 

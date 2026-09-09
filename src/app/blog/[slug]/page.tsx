@@ -18,6 +18,9 @@ export async function generateMetadata({
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
 
+  const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://new-portfolio-phi-drab.vercel.app";
+
   return {
     title: post.title,
     description: post.excerpt,
@@ -26,11 +29,11 @@ export async function generateMetadata({
       description: post.excerpt,
       type: "article",
       publishedTime: post.date,
-      images: ["/images/og-default.png"],
+      images: [`${siteUrl}/images/og-default.png`],
     },
     twitter: {
       card: "summary_large_image",
-      images: ["/images/og-default.png"],
+      images: [`${siteUrl}/images/og-default.png`],
     },
   };
 }
