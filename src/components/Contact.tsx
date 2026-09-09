@@ -11,7 +11,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-const CONTACT_EMAIL = "muhammadsalmanzubair5@email.com";
+const CONTACT_EMAIL = "muhammadsalmanzubair5@gmail.com";
 const CONTACT_PHONE = "+92 310 4471034";
 const LOCATION = "Lahore, Pakistan";
 
