@@ -30,7 +30,7 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://palsome.com",
     featured: true,
-    role: "Laravel Developer Intern",
+    role: "Laravel Developer",
     duration: "Jan 2026 — Present",
     overview:
       "Palsome is a live social media platform focused on privacy-first sharing. I work on backend features and bug fixes as part of the development team.",

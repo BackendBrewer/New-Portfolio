@@ -7,7 +7,7 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
-    role: "Laravel Developer Intern",
+    role: "Laravel Developer",
     company: "TRZ Technologies",
     duration: "Jan 2026 — Present",
     description:

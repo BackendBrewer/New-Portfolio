@@ -20,10 +20,10 @@ import {
 import { projects } from "@/data/projects";
 import { useCommandPalette } from "@/lib/command-palette-store";
 
-const CONTACT_EMAIL = "your@email.com";
-const CONTACT_PHONE = "+92 3XX XXXXXXX";
-const GITHUB_URL = "https://github.com/yourusername";
-const LINKEDIN_URL = "https://linkedin.com/in/yourusername";
+const CONTACT_EMAIL = "muhammadsalmanzubair5@gmail.com";
+const CONTACT_PHONE = "+92 310 4471034";
+const GITHUB_URL = "https://github.com/backendbrewer";
+const LINKEDIN_URL = "https://www.linkedin.com/in/m-salman-zubair-140073263";
 
 const navItems = [
   { href: "/", label: "Home", icon: Home, badge: "PAGE" },

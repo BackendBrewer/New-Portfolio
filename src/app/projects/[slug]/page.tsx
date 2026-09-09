@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { projects } from "@/data/projects";
 import ProjectGallery from "@/components/ProjectGallery";
+import ProjectCard from "@/components/ProjectCard";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -174,6 +175,24 @@ export default async function ProjectPage({ params }: Props) {
             <ProjectGallery images={project.gallery} title={project.title} />
           </section>
         )}
+        {/* Related projects */}
+        {(() => {
+          const related = projects.filter((p) => p.slug !== slug).slice(0, 2);
+          if (related.length === 0) return null;
+
+          return (
+            <section className="mt-16 pt-10 border-t border-neutral-200 dark:border-neutral-800">
+              <h2 className="text-xl font-semibold text-neutral-900 dark:text-white mb-5">
+                More Projects
+              </h2>
+              <div className="grid gap-6 sm:grid-cols-2">
+                {related.map((p) => (
+                  <ProjectCard key={p.slug} project={p} />
+                ))}
+              </div>
+            </section>
+          );
+        })()}
       </main>
       <Footer />
     </>

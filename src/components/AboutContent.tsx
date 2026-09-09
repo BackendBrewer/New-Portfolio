@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { education } from "@/data/education";
 
 export default function AboutContent() {
   return (
@@ -50,6 +51,32 @@ export default function AboutContent() {
           </p>
         </div>
       </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-12"
+        >
+          <h2 className="text-lg font-semibold text-neutral-900 dark:text-white mb-4">
+            Education
+          </h2>
+          <div className="space-y-4">
+            {education.map((item) => (
+              <div
+                key={item.degree}
+                className="flex flex-wrap justify-between gap-2 border-b border-neutral-100 dark:border-neutral-900 pb-4"
+              >
+                <div>
+                  <p className="text-neutral-900 dark:text-white font-medium">
+                    {item.degree}
+                  </p>
+                  <p className="text-sm text-neutral-500">{item.institution}</p>
+                </div>
+                <span className="text-sm text-neutral-400">{item.duration}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
     </main>
   );
 }
