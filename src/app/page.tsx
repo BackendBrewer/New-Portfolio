@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
 import Contact from "@/components/Contact";
 import { projects } from "@/data/projects";
+import StatsStrip from "@/components/StatsStrip";
 
 export default function Home() {
   const featuredProjects = projects.filter((p) => p.featured).slice(0, 2);
@@ -13,6 +14,7 @@ export default function Home() {
     <>
       <Header />
       <Hero />
+      <StatsStrip />
 
       {/* Brief intro — full detail /about pe */}
       <section className="mx-auto max-w-3xl px-6 py-10">

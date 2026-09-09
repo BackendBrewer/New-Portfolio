@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   verification: {
     google: "zyWhg76C7fn7ogARr6dmPWtDLBK3vdlZgxX1s7BUflg",
   },
+  alternates: {
+    canonical: siteUrl,
+  },
   metadataBase: new URL(siteUrl),
   title: {
     default: "Muhammad Salman — Laravel Developer",

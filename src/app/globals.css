@@ -3,5 +3,5 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 body {
-  @apply bg-white text-neutral-900 dark:bg-black dark:text-neutral-100 transition-colors duration-300;
+  @apply bg-white text-neutral-900 dark:bg-[#0a0908] dark:text-neutral-100 transition-colors duration-300;
 }
