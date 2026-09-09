@@ -33,7 +33,7 @@ export default function ExperienceContent() {
             transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
             className="border-l-2 border-neutral-200 dark:border-neutral-800 pl-6 relative"
           >
-            <div className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-orange-500 ring-4 ring-white dark:ring-black" />
+            {/* <div className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-orange-500 ring-4 ring-white dark:ring-black" /> */}
 
             <div className="flex flex-wrap justify-between gap-2">
               <h2 className="font-semibold text-lg text-neutral-900 dark:text-white">
