@@ -14,8 +14,7 @@ export const skills: SkillGroup[] = [
     items: [
       { name: "Laravel", level: "Strong" },
       { name: "PHP", level: "Strong" },
-      { name: "MySQL", level: "Comfortable" },
-      { name: "REST APIs", level: "Comfortable" },
+      { name: "Python", level: "Comfortable" },
     ],
   },
   {
@@ -23,8 +22,26 @@ export const skills: SkillGroup[] = [
     items: [
       { name: "Next.js", level: "Comfortable" },
       { name: "React", level: "Comfortable" },
-      { name: "TypeScript", level: "Learning" },
+      { name: "JavaScript", level: "Comfortable" },
+      { name: "HTML / CSS", level: "Strong" },
+      { name: "Bootstrap", level: "Comfortable" },
       { name: "Tailwind CSS", level: "Comfortable" },
+    ],
+  },
+  {
+    category: "Databases",
+    items: [
+      { name: "MySQL", level: "Comfortable" },
+      { name: "PostgreSQL", level: "Comfortable" },
+    ],
+  },
+  {
+    category: "Data Engineering",
+    items: [
+      { name: "ETL Pipelines", level: "Comfortable" },
+      { name: "Data Warehousing", level: "Comfortable" },
+      { name: "Power BI", level: "Comfortable" },
+      { name: "Microsoft Fabric", level: "Comfortable" },
     ],
   },
   {
@@ -32,7 +49,7 @@ export const skills: SkillGroup[] = [
     items: [
       { name: "Git", level: "Comfortable" },
       { name: "GitHub", level: "Comfortable" },
-      { name: "Laragon", level: "Strong" },
+      { name: "Docker", level: "Learning" },
       { name: "Vercel", level: "Comfortable" },
     ],
   },

@@ -26,11 +26,11 @@ export async function generateMetadata({
       description: post.excerpt,
       type: "article",
       publishedTime: post.date,
-      images: ["/opengraph-image"],
+      images: ["/images/og-default.png"],
     },
     twitter: {
       card: "summary_large_image",
-      images: ["/opengraph-image"],
+      images: ["/images/og-default.png"],
     },
   };
 }
@@ -61,7 +61,7 @@ export default async function BlogPostPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="mx-auto max-w-2xl px-6 py-16">
+      <main id="main-content" className="mx-auto max-w-2xl px-6 py-16">
         <Link
           href="/blog"
           className="text-sm text-orange-500 hover:underline"

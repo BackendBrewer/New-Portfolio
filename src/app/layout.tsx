@@ -8,15 +8,30 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://portfolio.vercel.app"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://new-portfolio-phi-drab.vercel.app"
   ),
   title: {
     default: "Muhammad Salman — Laravel Developer",
     template: "%s | Muhammad Salman",
   },
   description: "Laravel developer building fast, modern web applications.",
-  openGraph: { type: "website", locale: "en_US", siteName: "Muhammad Salman" },
-  twitter: { card: "summary_large_image" },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Muhammad Salman",
+    images: [
+      {
+        url: "/images/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Muhammad Salman — Laravel Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/og-default.png"],
+  },
 };
 
 const personJsonLd = {
@@ -24,7 +39,7 @@ const personJsonLd = {
   "@type": "Person",
   name: "Muhammad Salman",
   jobTitle: "Laravel Developer",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://portfolio.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://new-portfolio-phi-drab.vercel.app",
   sameAs: [
     "https://github.com/backendbrewer",
     "https://www.linkedin.com/in/m-salman-zubair-140073263",

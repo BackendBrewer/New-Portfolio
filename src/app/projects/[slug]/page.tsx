@@ -123,7 +123,7 @@ export default async function ProjectPage({ params }: Props) {
             alt={project.title}
             fill
             priority
-            sizes="100vw"
+            sizes="(max-width: 768px) 100vw, 768px"
             className="object-cover"
           />
         </div>
