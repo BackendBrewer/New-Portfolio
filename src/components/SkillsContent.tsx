@@ -11,7 +11,7 @@ const levelColor: Record<string, string> = {
 
 export default function SkillsContent() {
   return (
-    <main className="mx-auto max-w-3xl px-6 py-16">
+    <main className="mx-auto max-w-4xl px-6 py-16">
       <motion.h1
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}

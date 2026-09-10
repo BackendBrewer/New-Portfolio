@@ -149,7 +149,7 @@ export default function Highlights() {
   if (highlights.length === 0) return null;
 
   return (
-    <section className="mx-auto max-w-3xl px-6 py-20 relative">
+    <section className="mx-auto max-w-4xl px-6 py-20 relative">
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}

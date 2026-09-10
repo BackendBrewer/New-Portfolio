@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="mx-auto max-w-3xl px-6 py-24 relative flex flex-col items-center text-center">
+    <section className="mx-auto max-w-4xl px-6 py-24 relative flex flex-col items-center text-center">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-orange-500/10 blur-[100px] rounded-full pointer-events-none" />
 
       {/* Image animation JS-driven rehne do — yeh LCP element nahi hai */}

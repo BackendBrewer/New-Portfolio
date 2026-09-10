@@ -12,7 +12,7 @@ export default function WorkLog() {
   if (sorted.length === 0) return null;
 
   return (
-    <section className="mx-auto max-w-3xl px-6 py-16">
+    <section className="mx-auto max-w-4xl px-6 py-16">
       <motion.h2
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}

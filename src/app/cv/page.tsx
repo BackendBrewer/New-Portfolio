@@ -12,7 +12,7 @@ export default function CVPage() {
   return (
     <>
       <Header />
-      <main className="mx-auto max-w-3xl px-6 py-16 text-center sm:text-left">
+      <main className="mx-auto max-w-4xl px-6 py-16 text-center sm:text-left">
         <h1 className="text-3xl font-bold text-neutral-900 dark:text-white">
           CV
         </h1>

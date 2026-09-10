@@ -13,7 +13,7 @@ export default function ProjectsPage() {
   return (
     <>
       <Header />
-      <main className="mx-auto max-w-3xl px-6 py-16">
+      <main className="mx-auto max-w-4xl px-6 py-16">
         <h1 className="text-3xl font-bold text-neutral-900 dark:text-white">
           Projects
         </h1>

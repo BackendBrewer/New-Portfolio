@@ -18,31 +18,41 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
-  const filteredLinks = navLinks.filter((link) => link.href !== pathname);
   const setOpen = useCommandPalette((s) => s.setOpen);
 
   return (
-    <header className="mx-auto max-w-3xl px-6 py-6 flex justify-between items-center">
+    <header className="mx-auto max-w-4xl px-6 py-6 flex justify-between items-center gap-4">
       <Link
         href="/"
-        className="font-semibold text-lg text-neutral-900 dark:text-white"
+        className="font-semibold text-lg text-neutral-900 dark:text-white shrink-0"
       >
         Muhammad Salman Zubair
       </Link>
 
-      <nav className="hidden md:flex gap-5 items-center text-sm">
-        {filteredLinks.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
-          >
-            {link.label}
-          </Link>
-        ))}
+      <nav className="hidden md:flex gap-4 items-center text-sm shrink-0">
+        {navLinks.map((link) => {
+          const isActive =
+            link.href === "/"
+              ? pathname === "/"
+              : pathname.startsWith(link.href);
+
+          return (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`whitespace-nowrap transition-colors ${
+                isActive
+                  ? "text-orange-500 font-medium"
+                  : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
+              }`}
+            >
+              {link.label}
+            </Link>
+          );
+        })}
         <button
           onClick={() => setOpen(true)}
-          className="hidden lg:inline-block text-xs px-2 py-1 rounded border border-neutral-200 dark:border-neutral-800 text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 transition-colors"
+          className="hidden lg:inline-block text-xs px-2 py-1 rounded border border-neutral-200 dark:border-neutral-800 text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 transition-colors shrink-0"
         >
           ⌘K
         </button>

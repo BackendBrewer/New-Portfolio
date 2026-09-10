@@ -30,21 +30,34 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://palsome.com",
     featured: true,
-    role: "Laravel Developer",
+    role: "Laravel Developer Intern",
     duration: "Jan 2026 — Present",
     overview:
-      "Palsome is a live social media platform focused on privacy-first sharing. I work on backend features and bug fixes as part of the development team.",
+      "Palsome is a live social media platform focused on privacy-first sharing. I work on backend features, bug fixes, and new functionality as part of the development team, handling everything from real-time chat issues to admin reporting tools.",
     challenges: [
       {
         problem:
-          "Handling real-time-feeling feed updates without overloading the database on every request.",
+          "QA reported nine separate issues in the group and individual chat system — blocked users appearing in search, media not displaying correctly, broken reply threads, and video scrolling glitches during calls.",
         solution:
-          "Implemented query caching and optimized eager loading to reduce redundant database calls, improving response times significantly.",
+          "Traced each issue back to its root cause across the chat and calling modules and resolved all nine as verified by QA, improving the reliability of real-time messaging platform-wide.",
       },
       {
-        problem: "Managing complex relationships between users, posts, and interactions cleanly.",
+        problem:
+          "Broken or missing images were showing up as broken-icon placeholders across pages, groups, rooms, events, and friend suggestions — a small bug with a big visual footprint across the entire platform.",
         solution:
-          "Structured Eloquent relationships and used repository-style query scopes to keep controllers thin and logic reusable.",
+          "Built a reusable PHP and JS helper that detects broken media and automatically swaps in a default image, then applied it across every image tag site-wide for a consistent fallback experience.",
+      },
+      {
+        problem:
+          "Post expiry times were always displaying in English regardless of the user's selected language, even though translation worked correctly everywhere else on the platform.",
+        solution:
+          "Traced the bug to an AJAX route sitting outside the localization middleware group, so Laravel couldn't detect the active locale for that request. Moving it inside the correct middleware group fixed the translation immediately.",
+      },
+      {
+        problem:
+          "The platform needed a way to rank users by trending post engagement instead of the existing coin-based system, with no API in place to support it.",
+        solution:
+          "Designed and built new paginated APIs to surface trending users by engagement, then built the corresponding web controller and frontend from scratch to bring the feature to the website alongside the existing mobile app.",
       },
     ],
   },

@@ -64,7 +64,7 @@ export default async function ProjectPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main className="mx-auto max-w-3xl px-6 py-16">
+      <main className="mx-auto max-w-4xl px-6 py-16">
         {/* Header */}
         <h1 className="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white">
           {project.title}

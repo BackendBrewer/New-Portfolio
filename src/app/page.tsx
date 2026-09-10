@@ -19,7 +19,7 @@ export default function Home() {
       <Highlights />
 
       {/* Brief intro — full detail /about pe */}
-      <section className="mx-auto max-w-3xl px-6 py-10">
+      <section className="mx-auto max-w-4xl px-6 py-10">
         <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
           Laravel developer at TRZ Technologies, currently working on
           Palsome — a live social platform. Focused on clean backend
@@ -34,7 +34,7 @@ export default function Home() {
       </section>
 
       {/* Featured projects — full list /projects pe */}
-      <section className="mx-auto max-w-3xl px-6 py-10">
+      <section className="mx-auto max-w-4xl px-6 py-10">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-semibold text-neutral-900 dark:text-white">
             Projects
