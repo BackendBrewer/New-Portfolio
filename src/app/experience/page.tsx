@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ExperienceContent from "@/components/ExperienceContent";
+import WorkLog from "@/components/WorkLog";
 
 export const metadata: Metadata = {
   title: "Experience",
@@ -13,6 +14,7 @@ export default function ExperiencePage() {
     <>
       <Header />
       <ExperienceContent />
+      <WorkLog />
       <Footer />
     </>
   );
