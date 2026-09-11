@@ -79,6 +79,13 @@ export const workLog: WorkLogEntry[] = [
       "Integrated SightEngine's content moderation API into the post pipeline to automatically detect and block users whose posts exceeded the offensiveness limit, adding a layer of automated content safety.",
     tags: ["Laravel", "API Integration", "Moderation"],
   },
+  {
+    date: "2026-09-11",
+    title: "Fixed UI Event Bubbling & Unintended Redirects",
+    challenge: "Clicking empty space in a floating emoji panel accidentally triggered a background button due to DOM element overlap and unhandled click events.",
+    solution: "Refactored the JS-based button into a standard HTML anchor tag in the Blade template, which stopped click-through issues and bypassed browser pop-up blocks.",
+    tags: ["Laravel Blade", "JavaScript", "UI Debugging", "DOM Events"]
+  }
 //   {
 //     date: "YYYY-MM-DD",
 //     title: "Short, clear title",
