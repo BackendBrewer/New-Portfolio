@@ -62,6 +62,50 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "links-i-use",
+    title: "Links I Use",
+    description:
+      "Live web platform where I secured every email-sending flow against bot abuse using Google reCAPTCHA v3, without adding any friction for real users.",
+    tags: ["Laravel", "PHP", "Google reCAPTCHA v3", "Security", "Bot Protection"],
+    image: "/images/projects/links-i-use.png",
+    gallery: [
+      "/images/projects/links-i-use-1.png",
+      "/images/projects/links-i-use-2.png",
+    ],
+    liveUrl: "https://linksiuse.com",
+    featured: false,
+    role: "Laravel Developer",
+    duration: "2026",
+    overview:
+      "Links I Use is a live production project, and my main contribution was hardening it against automated abuse. Any feature that sends an email, like registration, password recovery, OTP delivery, or contact messages, is a natural target for bots: they can flood inboxes, burn through mail quotas, and create fake accounts at scale. I implemented Google reCAPTCHA v3 across every one of these entry points so that no bot can trigger an email, while genuine users continue to see a completely normal, challenge-free experience. The work involved auditing the whole application for email-triggering flows, integrating the reCAPTCHA token on the frontend, and validating it on the backend before any email is dispatched.",
+    challenges: [
+      {
+        problem:
+          "Multiple forms on the platform send emails, including OTP verification, password reset, and contact messages. Without protection, a simple script could hit these endpoints repeatedly, spamming real users' inboxes, draining the mail quota, and hurting the sender reputation of the domain.",
+        solution:
+          "Integrated reCAPTCHA v3 on every email-sending entry point: the Register form, Forgot Password form, Resend OTP after register, Resend OTP after forgot password, the Guest/Demo to Real User conversion form, and the Contact form. Each submission now carries a token that is verified on the server before the email is sent.",
+      },
+      {
+        problem:
+          "Flows like Resend OTP and guest-account conversion are easy to overlook because they are not the main forms, yet they still trigger emails. Leaving even one of them unprotected would give bots a backdoor to bypass all the other protections.",
+        solution:
+          "Audited the application end to end to find every place an email can be triggered, then added reCAPTCHA verification to each one. The rule I followed was simple: if an action sends an email, it must be verified first. This closed every gap instead of only securing the obvious forms.",
+      },
+      {
+        problem:
+          "Bot protection had to be effective without hurting the experience of genuine users. Visible challenges like image puzzles or tick-box checkboxes add friction, increase drop-off on registration, and are especially annoying on repeated actions like resending an OTP.",
+        solution:
+          "Used reCAPTCHA v3's invisible, score-based approach. A token is generated silently in the background when the form is submitted, so real users never see a challenge, and the backend decides whether to allow or block the request based on the returned score.",
+      },
+      {
+        problem:
+          "Generating a token on the frontend is not enough on its own. A bot can skip the browser entirely and call the endpoint directly, so trusting the client side would leave the protection ineffective.",
+        solution:
+          "Added server-side verification: the backend sends the token to Google's verification API, checks the success status and score, and only then proceeds to send the email. Requests with a missing, invalid, or low-score token are rejected before any email logic runs, which keeps the protection reliable even against direct API calls.",
+      },
+    ],
+  },
+  {
     slug: "express-it",
     title: "Express It",
     description: "Full-featured eCommerce platform for IT related products, built with Laravel.",

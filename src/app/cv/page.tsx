@@ -17,19 +17,21 @@ export default function CVPage() {
           CV
         </h1>
         <p className="mt-3 text-neutral-600 dark:text-neutral-400">
-          Download my full CV as a PDF, or view it below.
+          View or download my full CV as a PDF.
         </p>
 
-        
-          <a href="/cv.pdf"
-          download
+        <a
+          href="/cv.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-md bg-orange-500 text-black font-medium text-sm hover:bg-orange-400 transition-colors"
         >
           <Download size={16} />
-          Download CV
+          View / Download CV
         </a>
 
-        <div className="mt-10 border border-neutral-200 dark:border-neutral-800 rounded-lg overflow-hidden">
+        {/* Preview — sirf desktop/tablet pe, mobile pe iframe blank render hota hai isliye hide */}
+        <div className="hidden sm:block mt-10 border border-neutral-200 dark:border-neutral-800 rounded-lg overflow-hidden">
           <iframe
             src="/cv.pdf"
             className="w-full h-[70vh]"
