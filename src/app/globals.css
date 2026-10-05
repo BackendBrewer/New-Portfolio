@@ -25,3 +25,11 @@ body {
   animation: fade-up 0.6s ease-out 0.15s forwards;
   opacity: 0; /* start hidden, animation fills forward */
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

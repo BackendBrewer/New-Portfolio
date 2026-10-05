@@ -13,7 +13,6 @@ function flattenImages(data: typeof memories) {
 }
 
 const rotations = [-4, 3, -2, 4, -3, 2, -2.5, 3.5];
-// har photo ko alternate size dete hain — organic, non-uniform feel ke liye
 const sizes = ["w-36 sm:w-44", "w-32 sm:w-40", "w-40 sm:w-48", "w-36 sm:w-44"];
 
 function PushPin() {
@@ -70,7 +69,7 @@ export default function MemoriesGallery() {
       transition={{ duration: 0.5 }}
       className="mt-16"
     >
-      <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
+      <div className="flex items-center justify-between flex-wrap gap-2 mb-2 px-6 sm:px-0">
         <div className="flex items-center gap-2 text-orange-500 text-xs font-mono tracking-wider">
           <Camera size={13} />
           PHOTO ALBUM
@@ -79,16 +78,42 @@ export default function MemoriesGallery() {
           {flat.length} {flat.length === 1 ? "photo" : "photos"}
         </span>
       </div>
-      <h2 className="text-2xl font-semibold text-neutral-900 dark:text-white">
+      <h2 className="text-2xl font-semibold text-neutral-900 dark:text-white px-6 sm:px-0">
         A Few Memories
       </h2>
-      <p className="mt-1 text-sm text-neutral-500">
+      <p className="mt-1 text-sm text-neutral-500 px-6 sm:px-0">
         Some moments from university — where it all started.
       </p>
 
-      {/* corkboard backdrop with dot texture */}
+      {/* MOBILE — clean horizontal scroll strip */}
+      <div className="sm:hidden mt-8 flex gap-4 overflow-x-auto px-6 pb-4 snap-x snap-mandatory scrollbar-hide">
+        {flat.map((item, i) => (
+          <button
+            key={`mobile-img-${i}`}
+            onClick={() => setActiveIndex(i)}
+            className="relative shrink-0 snap-center bg-white p-2 pb-6 rounded-sm shadow-md"
+            style={{ width: "150px" }}
+          >
+            <PushPin />
+            <div className="relative w-full aspect-square overflow-hidden bg-neutral-100">
+              <Image
+                src={item.src}
+                alt={item.caption}
+                fill
+                sizes="150px"
+                className="object-cover"
+              />
+            </div>
+            <p className="mt-2 text-[10px] text-neutral-500 text-center italic truncate px-1 font-serif">
+              {item.caption.split("—")[0].trim()}
+            </p>
+          </button>
+        ))}
+      </div>
+
+      {/* DESKTOP — scattered corkboard style */}
       <div
-        className="relative mt-10 rounded-2xl border border-neutral-200 dark:border-neutral-800 px-6 py-10 sm:px-10 overflow-hidden"
+        className="hidden sm:block relative mt-10 rounded-2xl border border-neutral-200 dark:border-neutral-800 px-6 py-10 sm:px-10 overflow-hidden"
         style={{
           backgroundImage:
             "radial-gradient(circle, rgba(249,115,22,0.08) 1px, transparent 1px)",
@@ -99,7 +124,7 @@ export default function MemoriesGallery() {
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-12">
           {flat.map((item, i) => (
             <motion.button
-              key={`memory-img-${i}`}
+              key={`desktop-img-${i}`}
               onClick={() => setActiveIndex(i)}
               initial={{ opacity: 0, y: 30, rotate: 0, scale: 0.9 }}
               whileInView={{
@@ -125,7 +150,6 @@ export default function MemoriesGallery() {
               }}
             >
               <PushPin />
-
               <div className="relative w-full aspect-square overflow-hidden bg-neutral-100">
                 <Image
                   src={item.src}
@@ -136,7 +160,6 @@ export default function MemoriesGallery() {
                 />
                 <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.08)] pointer-events-none" />
               </div>
-
               <p className="mt-2.5 text-[10px] text-neutral-500 text-center italic truncate px-1 font-serif">
                 {item.caption.split("—")[0].trim()}
               </p>
@@ -145,7 +168,7 @@ export default function MemoriesGallery() {
         </div>
       </div>
 
-      {/* Lightbox */}
+      {/* Lightbox — same dono ke liye */}
       <AnimatePresence>
         {activeIndex !== null && (
           <motion.div
@@ -212,7 +235,6 @@ export default function MemoriesGallery() {
               </p>
             </motion.div>
 
-            {/* thumbnail strip — neeche, kitni aur photos hain dikhane ke liye */}
             {flat.length > 1 && (
               <div
                 onClick={(e) => e.stopPropagation()}
@@ -228,13 +250,7 @@ export default function MemoriesGallery() {
                         : "border-transparent opacity-40 hover:opacity-70"
                     }`}
                   >
-                    <Image
-                      src={item.src}
-                      alt=""
-                      fill
-                      sizes="48px"
-                      className="object-cover"
-                    />
+                    <Image src={item.src} alt="" fill sizes="48px" className="object-cover" />
                   </button>
                 ))}
               </div>
