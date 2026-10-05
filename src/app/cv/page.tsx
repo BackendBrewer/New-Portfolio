@@ -1,12 +1,9 @@
-import { Metadata } from "next";
+"use client";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Download } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "CV",
-  description: "Download the CV of Muhammad Salman — Laravel developer.",
-};
+import { openOrDownloadCV } from "@/lib/cv-handler";
 
 export default function CVPage() {
   return (
@@ -20,17 +17,14 @@ export default function CVPage() {
           View or download my full CV as a PDF.
         </p>
 
-        <a
-          href="/cv.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={openOrDownloadCV}
           className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-md bg-orange-500 text-black font-medium text-sm hover:bg-orange-400 transition-colors"
         >
           <Download size={16} />
           View / Download CV
-        </a>
+        </button>
 
-        {/* Preview — sirf desktop/tablet pe, mobile pe iframe blank render hota hai isliye hide */}
         <div className="hidden sm:block mt-10 border border-neutral-200 dark:border-neutral-800 rounded-lg overflow-hidden">
           <iframe
             src="/cv.pdf"

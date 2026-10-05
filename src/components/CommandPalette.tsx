@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { projects } from "@/data/projects";
 import { useCommandPalette } from "@/lib/command-palette-store";
+import { openOrDownloadCV } from "@/lib/cv-handler";
 
 const CONTACT_EMAIL = "muhammadsalmanzubair5@gmail.com";
 const CONTACT_PHONE = "+92 310 4471034";
@@ -180,15 +181,7 @@ export default function CommandPalette() {
               </Command.Item>
 
               <Command.Item
-                onSelect={() =>
-                  runCommand(() => {
-                    const link = document.createElement("a");
-                    link.href = "/cv.pdf";
-                    link.target = "_blank";
-                    link.rel = "noopener noreferrer";
-                    link.click();
-                  })
-                }
+                onSelect={() => runCommand(openOrDownloadCV)}
                 className={itemClass}
               >
                 <Badge>CANDIDATE</Badge>
