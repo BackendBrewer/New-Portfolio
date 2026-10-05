@@ -85,6 +85,13 @@ export const workLog: WorkLogEntry[] = [
     challenge: "Clicking empty space in a floating emoji panel accidentally triggered a background button due to DOM element overlap and unhandled click events.",
     solution: "Refactored the JS-based button into a standard HTML anchor tag in the Blade template, which stopped click-through issues and bypassed browser pop-up blocks.",
     tags: ["Laravel Blade", "JavaScript", "UI Debugging", "DOM Events"]
+  },
+  {
+    date: "2026-10-02",
+    title: "Secured All Email-Sending Forms with Google reCAPTCHA v3",
+    challenge: "On the live Links I Use platform (linksiuse.com), every form that sends an email, like registration, forgot password, OTP resend, guest account conversion, and the contact form, was open to automated abuse. Bots could repeatedly trigger these forms to spam users' inboxes, flood OTP requests, and waste the mail quota. Visible captchas were not ideal either, since they add friction for genuine users, especially on repeated actions like resending an OTP.",
+    solution: "Implemented invisible Google reCAPTCHA v3 on every flow where an email is sent: the Register form, Forgot Password form, Resend OTP after register, Resend OTP after forgot password, the Guest/Demo to Real User conversion form, and the Contact form. I first went through the whole application to find each email-triggering action so that no path was left unprotected, then added the protection to each one. Real users see no challenge or extra step, while automated bots are blocked from triggering emails.",
+    tags: ["Laravel", "Google reCAPTCHA v3", "Security", "Bot Protection", "Forms"]
   }
 //   {
 //     date: "YYYY-MM-DD",
