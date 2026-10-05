@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { education } from "@/data/education";
 import CertificationsList from "@/components/CertificationsList";
+import MemoriesGallery from "@/components/MemoriesGallery";
 
 export default function AboutContent() {
   return (
@@ -79,6 +80,7 @@ export default function AboutContent() {
           </div>
         </motion.div>
         <CertificationsList />
+        <MemoriesGallery />
     </main>
   );
 }
