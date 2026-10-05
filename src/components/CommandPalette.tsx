@@ -180,12 +180,20 @@ export default function CommandPalette() {
               </Command.Item>
 
               <Command.Item
-                onSelect={() => runCommand(() => window.open("/cv.pdf", "_blank"))}
+                onSelect={() =>
+                  runCommand(() => {
+                    const link = document.createElement("a");
+                    link.href = "/cv.pdf";
+                    link.target = "_blank";
+                    link.rel = "noopener noreferrer";
+                    link.click();
+                  })
+                }
                 className={itemClass}
               >
                 <Badge>CANDIDATE</Badge>
                 <FileText size={15} className="text-neutral-400 shrink-0" />
-                <span className="text-neutral-200">Download CV (PDF)</span>
+                <span className="text-neutral-200">View / Download CV</span>
                 <ExecuteHint />
               </Command.Item>
             </Command.Group>
