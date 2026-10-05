@@ -14,7 +14,7 @@ export const memories: Memory[] = [
   },
   {
     images: [
-        "/images/memories/certificate.jpg",
+        "/images/memories/certificate-1.jpg",
         // "/images/memories/session-2.jpg",
         // "/images/memories/session-3.jpg",
         // "/images/memories/session-4.jpg",
