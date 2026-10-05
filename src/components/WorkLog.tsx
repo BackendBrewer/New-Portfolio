@@ -29,7 +29,7 @@ export default function WorkLog() {
         transition={{ duration: 0.5, delay: 0.05 }}
         className="mt-2 text-sm text-neutral-500"
       >
-        Real challenges I've worked through while building on Palsome.
+        Real challenges I've worked through while building on Palsome and on other live Apps.
       </motion.p>
 
       <div className="mt-8 space-y-4">
