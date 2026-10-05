@@ -11,7 +11,7 @@ export const experience: ExperienceItem[] = [
     company: "TRZ Technologies",
     duration: "Jan 2026 — Present",
     description:
-      "Joined as a paid intern working on Palsome, a live Laravel-based social media platform. Responsible for building new features, fixing bugs, and maintaining backend logic alongside a senior development team.",
+      "Joined as a intern working on Palsome, a live Laravel-based social media platform. Responsible for building new features, fixing bugs, and maintaining backend logic alongside a senior development team.",
   },
   {
     role: "Data Engineer Trainee",
